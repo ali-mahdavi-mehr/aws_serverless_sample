@@ -5,7 +5,7 @@
 use docker container => nikolaik/python-nodejs:python3.9-nodejs16
 </sup>
 
-:zap: **or you can run localy**
+:zap: **or you can Config localy**
 
 <sup>
   
