@@ -1,11 +1,11 @@
-# aws_serverless_sample
+# AWS Serverless Sample
 :fire:PipeLine CI/CD required
 
 <sup>
 use docker container => nikolaik/python-nodejs:python3.9-nodejs16
 </sup>
 
-**or you can run localy**
+:zap: **or you can run localy**
 
 <sup>
   
