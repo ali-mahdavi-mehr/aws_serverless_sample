@@ -1,0 +1,16 @@
+image: nikolaik/python-nodejs:python3.9-nodejs16
+
+stages:
+  - deploy
+
+production:
+  stage: deploy
+  before_script:
+    - npm config set prefix /usr/local
+    - npm install -g serverless
+    - node --version
+    - serverless plugin install -n serverless-python-requirements
+    
+  script:
+    - serverless deploy
+  environment: production
