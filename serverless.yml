@@ -1,28 +1,37 @@
+#your service name
 service: serverless-telegram-bot
-frameworkVersion: '3'
 
+#your provider
 provider:
+  # must be this
   name: aws
+  #python runtime version
   runtime: python3.9
   
 plugins:
+  #collecting libraries
   - serverless-python-requirements
 
 custom:
   pythonRequirements:
     dockerizePip: false
     zip: true
+    # get python runtime version
     pythonBin: ${opt:pythonBin, self:provider.runtime}
 
 
 package:
   patterns:
+    # i want to use everything with .py extenction  and numpy library
     - '*.py'
     - 'numpy'
 
-
+#handler
 functions:
+  #handler name
   webhook:
+    # path of handler function
     handler: handler.webhook
     events:
+    #all Get requests will sent to this handler
       - http: GET / 
