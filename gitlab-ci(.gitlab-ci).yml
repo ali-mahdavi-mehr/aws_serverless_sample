@@ -1,17 +1,23 @@
 #Image that has Python 3.9 and nodejs 16
 image: nikolaik/python-nodejs:python3.9-nodejs16
 
+#Your Stage name read more https://sst.dev/chapters/stages-in-serverless-framework.html
 stages:
   - deploy
 
+
+#prepare environment
 production:
   stage: deploy
   before_script:
     - npm config set prefix /usr/local
+    #install serverless
     - npm install -g serverless
     - node --version
+    #install serverless-python-requirements
     - serverless plugin install -n serverless-python-requirements
     
   script:
+  #run serverless deploy
     - serverless deploy
   environment: production
