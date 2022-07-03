@@ -33,5 +33,5 @@ functions:
     # path of handler function
     handler: handler.webhook
     events:
-    #all Get requests will sent to this handler
+    #all Get requests will send to this handler
       - http: GET / 
